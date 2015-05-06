@@ -1,0 +1,14 @@
+
+ifeq ($(HOST),)
+CC      = $(CROSS_COMPILE)gcc
+CPP     = $(CC) -E
+AR      = $(CROSS_COMPILE)ar
+STRIP   = $(CROSS_COMPILE)strip
+else
+CC      = gcc
+CPP     = $(CC) -E
+AR      = ar
+STRIP   = strip
+endif
+
+RM      = rm -vf
